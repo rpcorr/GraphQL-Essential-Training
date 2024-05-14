@@ -12,11 +12,15 @@ app.get('/', (req, res) => {
 
 const root = { product: () => {
     return {
-    "id": 29729872,
-    "name": "Widget",
-    "description": "Beautiful widget to use in the garden",
-    "price": 34.99,
-    "soldout": false,
+        "id": 29729872,
+        "name": "Widget",
+        "description": "Beautiful widget to use in the garden",
+        "price": 34.99,
+        "soldout": false,
+        "stores": [
+            {store: "Pasadena"},
+            {store: "Los Angeles"}
+        ],
     }
 }};
 
