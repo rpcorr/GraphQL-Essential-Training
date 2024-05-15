@@ -83,3 +83,39 @@ query {
     inventory
   }
 }
+
+
+Querying with Fragments
+-----------------------
+
+query	{
+  widgetone: getProduct(id: "6644b88c13ade72e1f76302c") {
+    ...productFragment	
+  }
+  widgettwo: getProduct(id: "6644c0dc451a198d53c622f9") {
+    ...productFragment
+  }
+}
+
+fragment productFragment on Product {
+  name
+  description
+  price
+}
+
+---------------
+
+query	{
+  widgetone: getProduct(id: "6644b88c13ade72e1f76302c") {
+    ...productFragment	
+  }
+  widgettwo: getAllProducts {
+    ...productFragment
+  }
+}
+
+fragment productFragment on Product {
+  name
+  description
+  price
+}
