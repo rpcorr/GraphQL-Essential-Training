@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 const { MongoClient } = require('mongodb');
 const dotenv = require('dotenv');
 
@@ -14,7 +15,7 @@ const DB = process.env.DATABASE.replace(
 const uri = DB; // Change this URI to match your MongoDB server
 
 // Database Name
-const dbName = 'graphQL'; // Change this to your database name
+const dbName = 'widgets'; // Change this to your database name
 
 // Create a new MongoClient
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
