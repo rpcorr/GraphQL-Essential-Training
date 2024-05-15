@@ -1,0 +1,15 @@
+Querying with Aliases
+
+Within GraphiQL (after starting the program), type the following:
+
+query	{
+  widgetone: getProduct(id: "6644b88c13ade72e1f76302c") {
+    name
+    description
+    price
+  }
+  widgettwo: getProduct(id: "6644c0dc451a198d53c622f9") {
+    name
+    inventory
+  }
+}
