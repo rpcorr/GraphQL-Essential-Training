@@ -1,8 +1,78 @@
+Within GraphiQL (after starting the program), type the content under the headers:
+
+
+Add new items with mutations
+----------------------------
+
+mutation {
+  createProduct(input: {
+    name: "Shovel 4",
+    description: "Another shovel for your gardren",
+    price: 24.99,
+    soldout: ONSALE,
+    inventory: 30,
+    stores: [
+      {	
+      store: "Thousand Oaks"
+      },
+      {
+        store: "Orlando"
+      }
+    ]
+  }) {
+    price
+    name
+    description
+    inventory
+    soldout
+    id
+  }
+}
+
+
+
+Update items with mutations
+---------------------------
+
+mutation {
+  updateProduct(input: {
+    id: "6644c5e90c9868addd82df30"
+    price: 50.99
+    stores: [
+      { store: "Orlando"},
+      { store: "Los Angeles"}
+    ]
+  }) {
+    price
+    name
+  }
+}
+
+Delete items with mutation
+--------------------------
+
+mutation {
+  deleteProduct(id:"6644c5e90c9868addd82df30")
+}
+
+
+
+Querying All Products
+---------------------
+
+query {
+  getAllProducts{
+    name
+    price
+    inventory
+  }
+}
+
+
 Querying with Aliases
+---------------------
 
-Within GraphiQL (after starting the program), type the following:
-
-query	{
+query {
   widgetone: getProduct(id: "6644b88c13ade72e1f76302c") {
     name
     description
