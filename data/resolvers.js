@@ -10,6 +10,14 @@ const resolvers = {
         }
     },
 
+    getAllProducts: async () => {
+        try {
+            return await Widgets.find({});
+        } catch (error) {
+            throw new Error(error);
+        }
+    },
+
     createProduct: async ( {input} ) => {
         const newWidget = new Widgets( {
             name: input.name,
