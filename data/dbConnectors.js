@@ -11,7 +11,7 @@ async function connectMongo() {
 
 connectMongo();
 
-const widgetSchema = new mongoose.schema( {
+const widgetSchema = new mongoose.Schema( {
     name: String,
     description: String,
     price: Number,
