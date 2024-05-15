@@ -31,10 +31,19 @@ const resolvers = {
     },
 
     updateProduct: async ( {input}) => {
-        
+
         try{
             const updateWidget = await Widgets.findOneAndUpdate( {_id: input.id}, input, { new: true});
             return updateWidget;
+        } catch (error) {
+            throw new Error(error);
+        }
+    },
+
+    deleteProduct: async ( {id} ) => {
+        try{
+            await Widgets.deleteOne( { _id: id});
+            return 'Successfully deleted widget';
         } catch (error) {
             throw new Error(error);
         }
